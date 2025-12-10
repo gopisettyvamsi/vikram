@@ -52,7 +52,7 @@ def generate_test_cases(module: str):
     prompt = PROMPT_TEMPLATE.format(module=module)
 
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama-3.1-70b-versatile",  # Updated to a more reliable model
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2
     )
