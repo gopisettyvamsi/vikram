@@ -647,7 +647,7 @@ st.markdown(f"""
         <p style="font-size: 1rem; margin-bottom: 0.5rem;">
             Developed by <strong style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.1rem;">Edvenswa</strong>
         </p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;">
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #9ca3af;"> 
             AI Test Case Generator | Professional QA Automation Tool
         </p>
         <p style="margin-top: 0.75rem; font-size: 0.7rem; color: #d1d5db;">
