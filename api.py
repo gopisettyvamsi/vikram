@@ -14,7 +14,8 @@ CORS(app)  # Enable CORS for external clients
 ALLOWED_IPS = [
     '127.0.0.1',      # localhost
     '::1',            # localhost IPv6
-    '125.21.51.10',  # Your IP address
+    '125.21.51.10',   # Your IP address
+    '192.168.0.127',  # Local network IP
 ]
 
 def require_ip_whitelist(f):
