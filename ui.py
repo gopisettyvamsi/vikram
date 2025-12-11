@@ -64,21 +64,22 @@ def get_base64_logo():
 
 logo_base64 = get_base64_logo()
 
-if not is_allowed:
-    # Display detailed access denied information
-    st.error("🚫 Access Denied")
-    st.warning(f"Your IP address ({client_ip}) is not authorized to access this application.")
-    st.info("Please contact the administrator to whitelist your IP address.")
+# TEMPORARILY DISABLED - Allowing all IPs
+# if not is_allowed:
+#     # Display detailed access denied information
+#     st.error("🚫 Access Denied")
+#     st.warning(f"Your IP address ({client_ip}) is not authorized to access this application.")
+#     st.info("Please contact the administrator to whitelist your IP address.")
 
-    # Show comparison for debugging
-    st.markdown("---")
-    st.markdown("### 🔍 Access Details")
-    st.code(f"""
-Current IP Address: {client_ip}
-Allowed IP Addresses: {', '.join(ALLOWED_IPS)}
-Status: BLOCKED ❌
-    """)
-    st.stop()
+#     # Show comparison for debugging
+#     st.markdown("---")
+#     st.markdown("### 🔍 Access Details")
+#     st.code(f"""
+# Current IP Address: {client_ip}
+# Allowed IP Addresses: {', '.join(ALLOWED_IPS)}
+# Status: BLOCKED ❌
+#     """)
+#     st.stop()
 
 # Professional Custom CSS
 st.markdown("""
