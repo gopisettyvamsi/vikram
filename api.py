@@ -35,14 +35,15 @@ def require_ip_whitelist(f):
         print(f"{'='*60}\n")
 
         # Check if client IP is in allowed list
-        if client_ip not in ALLOWED_IPS:
-            print(f"[BLOCKED] Access denied for IP: {client_ip}")
-            return jsonify({
-                "error": "Access denied",
-                "message": f"Your IP address ({client_ip}) is not authorized to access this resource",
-                "allowed_ips": ALLOWED_IPS,
-                "your_ip": client_ip
-            }), 403
+        # TEMPORARILY DISABLED - Allowing all IPs
+        # if client_ip not in ALLOWED_IPS:
+        #     print(f"[BLOCKED] Access denied for IP: {client_ip}")
+        #     return jsonify({
+        #         "error": "Access denied",
+        #         "message": f"Your IP address ({client_ip}) is not authorized to access this resource",
+        #         "allowed_ips": ALLOWED_IPS,
+        #         "your_ip": client_ip
+        #     }), 403
 
         print(f"[ALLOWED] Access granted for IP: {client_ip}")
         return f(*args, **kwargs)
