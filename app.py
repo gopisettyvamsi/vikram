@@ -2,11 +2,22 @@ import os
 import json
 from dotenv import load_dotenv
 from groq import Groq
+import streamlit as st
 
 # Load environment variables
 load_dotenv()
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+# Try to get API key from Streamlit secrets first (for production), then fall back to .env (for local)
+try:
+    api_key = st.secrets["GROQ_API_KEY"]
+except (FileNotFoundError, KeyError):
+    api_key = os.getenv("GROQ_API_KEY")
+
+if not api_key:
+    st.error("⚠️ GROQ_API_KEY not found. Please set it in Streamlit secrets or your .env file.")
+    st.stop()
+
+client = Groq(api_key=api_key)
 
 PROMPT_TEMPLATE = """
 You are a senior QA engineer.
